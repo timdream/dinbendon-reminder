@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <script defer src="panel.js"></script>
+  <style>
+    p {
+      font-size: 1.2em;
+    }
+
+    a {
+      color: #000080 !important;
+    }
+
+    a.ignore {
+      text-decoration: none;
+      font-size: 10px;
+
+      display: inline-block;
+      text-align: center;
+      padding: 4px;
+      width: 14px;
+      height: 14px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+
+      vertical-align: middle;
+    }
+
+    a.ignore:hover {
+      border: 1px outset #ccc;
+    }
+
+    a.ignore:active {
+      border: 1px inset #ccc;
+    }
+
+    a.ignore::before {
+      content: '🔔';
+    }
+
+    .order.is-ignored a.ignore::before {
+      content: '🔕';
+    }
+
+    .order.is-expired a.ignore {
+      display: none;
+    }
+
+    .order .ordered {
+      color: #003300;
+    }
+
+    .order:not(.is-ignored) .unordered {
+      font-weight: bold;
+      color: #660000;
+    }
+
+    .order.is-ignored .unordered {
+      color: #666666;
+    }
+
+    .order.is-ordered .unordered,
+    .order:not(.is-ordered) .ordered {
+      display: none;
+    }
+    .order:not(.is-ignored) .ignored {
+      display: none;
+    }
+
+    .expires {
+      display: block;
+    }
+
+    .expires:empty {
+      display: none;
+    }
+
+    .order:not(.is-expired) .expires::before {
+      content: '預計截止：';
+    }
+
+    .order.is-expired .expires::before {
+      content: '已截止：';
+    }
+
+    .order-item:empty {
+      display: none;
+    }
+
+    .order-item::before {
+      content: '（';
+    }
+
+    .order-item::after {
+      content: '）';
+    }
+  </style>
+</head>
+<body>
+  <div id="orders">
+    <div class="order">
+    </div>
+  </div>
+  <template id="order-template">
+    <div class="order">
+      <h2>
+        <a target="_blank" href="#" class="name"></a>
+        <a class="ignore" href="#" title="不要提醒我"></a>
+      </h2>
+      <p>
+        <span class="ordered">已登記</span><!--
+        --><span class="unordered">未登記</span><!--
+        --><span class="order-item"></span><!--
+        --><span class="ignored">（不提醒）</span><!--
+        --><span class="expires"></span>
+      </p>
+    </div>
+  </template>
+</body>
+</html>

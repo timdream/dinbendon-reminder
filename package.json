@@ -1,0 +1,11 @@
+{
+  "name": "dinbendon-reminder",
+  "title": "勿忘訂便當",
+  "homepage": "https://github.com/timdream/dinbendon-reminder",
+  "id": "dinbendon-reminder@timdream.org",
+  "description": "提醒目前訂便當網站上未登記的訂單。",
+  "author": "Tim Chien",
+  "license": "MPL 2.0",
+  "icon": "data/dinbendon-alpha.png",
+  "version": "0.1"
+}
