@@ -12,7 +12,28 @@
       color: #000080 !important;
     }
 
-    a.ignore {
+    hr {
+      border: none;
+      border-top: 1px dashed rgba(0, 0, 0, 0.3);
+      clear: both;
+    }
+
+    body:not(.is-error) #status-error,
+    body:not(.is-loading) #status-loading,
+    body:not(.is-ok) #orders,
+    body:not(.is-ok) #name {
+      display: none;
+    }
+
+    #name::before {
+      content: '帳號：';
+    }
+
+    #reload {
+      float: right;
+    }
+
+    a.button {
       text-decoration: none;
       font-size: 10px;
 
@@ -27,11 +48,11 @@
       vertical-align: middle;
     }
 
-    a.ignore:hover {
+    a.button:hover {
       border: 1px outset #ccc;
     }
 
-    a.ignore:active {
+    a.button:active {
       border: 1px inset #ccc;
     }
 
@@ -98,6 +119,12 @@
   </style>
 </head>
 <body>
+  <p><span id="status-error">錯誤：網路錯誤或是尚未登入</span><!--
+  --><span id="status-loading">載入中⋯⋯</span><!--
+  --><span id="name">&nbsp;</span>
+    <a href="#" id="reload" class="button" title="重新整理">🔃</a>
+  </p>
+  <hr />
   <div id="orders">
     <div class="order">
     </div>
@@ -106,7 +133,7 @@
     <div class="order">
       <h2>
         <a target="_blank" href="#" class="name"></a>
-        <a class="ignore" href="#" title="不要提醒我"></a>
+        <a class="ignore button" href="#" title="不要提醒我"></a>
       </h2>
       <p>
         <span class="ordered">已登記</span><!--
