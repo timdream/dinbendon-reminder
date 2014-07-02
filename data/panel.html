@@ -21,16 +21,29 @@
     body:not(.is-error) #status-error,
     body:not(.is-loading) #status-loading,
     body:not(.is-ok) #orders,
-    body:not(.is-ok) #name {
+    body:not(.is-ok) #name,
+    body:not(.is-ok) #updated-timestamp {
       display: none;
     }
 
-    #name::before {
-      content: '帳號：';
+    #name {
+      font-weight: bold;
+    }
+
+    #name:empty {
+      display: none;
     }
 
     #reload {
       float: right;
+    }
+
+    #updated-timestamp::before {
+      content: '更新時間：';
+    }
+
+    #updated-timestamp:empty {
+      display: none;
     }
 
     a.button {
@@ -119,10 +132,11 @@
   </style>
 </head>
 <body>
+  <a href="#" id="reload" class="button" title="重新整理">🔃</a>
+  <p id="name"></p>
   <p><span id="status-error">錯誤：網路錯誤或是尚未登入</span><!--
-  --><span id="status-loading">載入中⋯⋯</span><!--
-  --><span id="name">&nbsp;</span>
-    <a href="#" id="reload" class="button" title="重新整理">🔃</a>
+  --><span id="status-loading">載入中⋯⋯</span><!---
+  --><span id="updated-timestamp">&nbsp;</span>
   </p>
   <hr />
   <div id="orders">

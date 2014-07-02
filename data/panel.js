@@ -7,10 +7,12 @@ mo.observe(ordersEl, { childList: true });
 setInterval(updateTimestamps, 60 * 1000);
 
 function updateTimestamps() {
-  var timeEls = ordersEl.querySelectorAll('.expires');
+  var timeEls = document.body.querySelectorAll('[data-timestamp]');
   Array.prototype.forEach.call(timeEls, function(el) {
     if (el.dataset.timestamp) {
       el.textContent = humane_date(parseInt(el.dataset.timestamp, 10));
+    } else {
+      el.textContent = '';
     }
   });
 }
