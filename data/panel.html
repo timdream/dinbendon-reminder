@@ -110,6 +110,18 @@
       display: none;
     }
 
+    .originator {
+      display: block;
+    }
+
+    .originator:empty {
+      display: none;
+    }
+
+    .originator::before {
+      content: '發起人：';
+    }
+
     .order:not(.is-expired) .expires::before {
       content: '預計截止：';
     }
@@ -133,7 +145,7 @@
 </head>
 <body>
   <a href="#" id="reload" class="button" title="重新整理">🔃</a>
-  <p id="name"></p>
+  <p><a target="_blank" href="http://dinbendon.net/do/" id="name"></a></p>
   <p><span id="status-error">錯誤：網路錯誤或是尚未登入</span><!--
   --><span id="status-loading">載入中⋯⋯</span><!---
   --><span id="updated-timestamp">&nbsp;</span>
@@ -154,7 +166,8 @@
         --><span class="unordered">未登記</span><!--
         --><span class="order-item"></span><!--
         --><span class="ignored">（不提醒）</span><!--
-        --><span class="expires"></span>
+        --><span class="expires"></span><!--
+        --><span class="originator"></span>
       </p>
     </div>
   </template>
