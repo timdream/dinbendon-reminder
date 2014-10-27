@@ -6,6 +6,6 @@
   "description": "提醒目前訂便當網站上未登記的訂單。",
   "author": "Tim Chien",
   "license": "MPL 2.0",
-  "icon": "data/dinbendon-alpha.png",
+  "icon": "data/images/logo/dinbendon-alpha.png",
   "version": "0.1.6"
 }
