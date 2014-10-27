@@ -36,6 +36,8 @@
 
     #reload {
       float: right;
+
+      background-image: url('images/icon/refresh.svg');
     }
 
     #updated-timestamp::before {
@@ -52,6 +54,7 @@
 
       display: inline-block;
       text-align: center;
+      margin-top: -2px;
       padding: 4px;
       width: 14px;
       height: 14px;
@@ -59,6 +62,10 @@
       border-radius: 4px;
 
       vertical-align: middle;
+
+      background-size: 16px 16px;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     a.button:hover {
@@ -69,12 +76,12 @@
       border: 1px inset #ccc;
     }
 
-    a.ignore::before {
-      content: '🔔';
+    a.ignore {
+      background-image: url('images/icon/bell-outline.svg');
     }
 
-    .order.is-ignored a.ignore::before {
-      content: '🔕';
+    .order.is-ignored a.ignore {
+      background-image: url('images/icon/bell-off.svg');
     }
 
     .order.is-expired a.ignore {
@@ -144,7 +151,7 @@
   </style>
 </head>
 <body>
-  <a href="#" id="reload" class="button" title="重新整理">🔃</a>
+  <a href="#" id="reload" class="button" title="重新整理"></a>
   <p><a target="_blank" href="http://dinbendon.net/do/" id="name"></a></p>
   <p><span id="status-error">錯誤：網路錯誤或是尚未登入</span><!--
   --><span id="status-loading">載入中⋯⋯</span><!---
