@@ -1,0 +1,26 @@
+{
+  "name": "勿忘訂便當",
+  "manifest_version": 2,
+  "version": "0.1.9",
+  "description": "提醒目前訂便當網站上未登記的訂單。",
+  "icons": {
+    "32": "data/images/logo/dinbendon-alpha.png"
+  },
+  "homepage_url": "https://github.com/timdream/dinbendon-reminder",
+  "author": {
+    "name": "Tim Chien",
+    "url": "https://timdream.org/"
+  },
+  "browser_action": {
+    "default_icon": "data/images/logo/dinbendon-alpha-grayscale.png",
+    "default_title": "勿忘訂便當",
+    "default_popup": "data/panel.html"
+  },
+  "background": {
+    "scripts": [ "lib/dinbendon-parser.js", "lib/main.js" ]
+  },
+  "permissions": [
+    "notifications",
+    "https://dinbendon.net/"
+  ]
+}
