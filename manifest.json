@@ -4,7 +4,8 @@
   "version": "0.1.9",
   "description": "提醒目前訂便當網站上未登記的訂單。",
   "icons": {
-    "32": "data/images/logo/dinbendon-alpha.png"
+    "32": "data/images/logo/dinbendon-alpha.png",
+    "64": "data/images/logo/dinbendon-alpha.png"
   },
   "homepage_url": "https://github.com/timdream/dinbendon-reminder",
   "author": {
