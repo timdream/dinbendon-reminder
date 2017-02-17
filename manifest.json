@@ -17,9 +17,11 @@
     "default_popup": "data/panel.html"
   },
   "background": {
-    "scripts": [ "lib/dinbendon-parser.js", "lib/main.js" ]
+    "scripts": [ "lib/dinbendon-parser.js", "lib/main.js" ],
+    "persistent": false
   },
   "permissions": [
+    "alarms",
     "notifications",
     "https://dinbendon.net/"
   ]
