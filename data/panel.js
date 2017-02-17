@@ -90,14 +90,14 @@ ordersEl.addEventListener('click', function(evt) {
   }
 
   evt.target.parentNode.parentNode.classList.toggle('is-ignored');
-  chrome.runtime.sendMessage(null, { name: 'ignore-order', msg: name });
+  chrome.runtime.sendMessage({ name: 'ignore-order', msg: name });
 });
 
 reloadEl.addEventListener('click', function(evt) {
   document.body.classList.remove('is-error');
   document.body.classList.remove('is-ok');
   document.body.classList.add('is-loading');
-  chrome.runtime.sendMessage(null, { name: 'reload' });
+  chrome.runtime.sendMessage({ name: 'reload' });
 });
 
 chrome.runtime.onMessage.addListener(function(runtimeMsg) {
@@ -160,4 +160,4 @@ chrome.runtime.onMessage.addListener(function(runtimeMsg) {
   updateTimestamps();
 });
 
-chrome.runtime.sendMessage(null, { name: 'ready' });
+chrome.runtime.sendMessage({ name: 'ready' });
