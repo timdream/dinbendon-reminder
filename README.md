@@ -2,7 +2,10 @@
 
 提醒目前 [Din.Ben.Don!](http://dinbendon.net/) 網站上未登記的訂單。
 
-**注意：此 Firefox 附加元件與訂便當網站無關，是愛用者自行製作的軟體，沒有功能保證。**
+* [安裝至 Chrome](https://chrome.google.com/webstore/detail/kiloeefjenddlaigndmnjlllaglobhph/)
+* [安裝到 Firefox](https://addons.mozilla.org/zh-TW/firefox/addon/dinbendon-reminder/)
+
+**注意：此程式與訂便當網站無關，是愛用者自行製作的軟體，沒有功能保證。**
 
 ## 功能
 
