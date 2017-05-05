@@ -161,3 +161,7 @@ chrome.runtime.onMessage.addListener(function(runtimeMsg) {
 });
 
 chrome.runtime.sendMessage({ name: 'ready' });
+
+if (/Firefox/.test(navigator.userAgent)) {
+  document.body.classList.add('is-firefox');
+}

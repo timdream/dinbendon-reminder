@@ -29,6 +29,14 @@
       clear: both;
     }
 
+    #firefox-warning {
+      display: none;
+    }
+
+    body.is-firefox.is-error #firefox-warning {
+      display: block;
+    }
+
     body:not(.is-error) #status-error,
     body:not(.is-loading) #status-loading,
     body:not(.is-ok) #orders,
@@ -169,6 +177,11 @@
   --><span id="status-loading">載入中⋯⋯</span><!---
   --><span id="updated-timestamp">&nbsp;</span>
   </p>
+  <div id="firefox-warning">
+    <hr />
+    <p>如果修改了預設的 cookie 設定，請確定 <code>https://dinbendon.net</code> 在您的 <a href="https://support.mozilla.org/zh-TW/kb/websites-say-cookies-are-blocked-unblock-them">cookie 例外清單</a>內。</p>
+    <p>擴充套件在 Firefox 修好 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1322113">bug 1322113</a> 之後才能解除這個限制。</p>
+  </div>
   <hr />
   <div id="orders">
     <div class="order">
