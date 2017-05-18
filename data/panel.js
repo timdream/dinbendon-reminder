@@ -84,13 +84,15 @@ var nameEl = document.getElementById('name');
 var updatedTimestampEl = document.getElementById('updated-timestamp');
 
 ordersEl.addEventListener('click', function(evt) {
-  var name = evt.target.dataset.name;
-  if (!name) {
+  if (evt.target.classList.contains('ignore')) {
+    evt.target.parentNode.parentNode.classList.toggle('is-ignored');
+    chrome.runtime.sendMessage({ name: 'ignore-order', msg: evt.target.dataset.name });
     return;
   }
 
-  evt.target.parentNode.parentNode.classList.toggle('is-ignored');
-  chrome.runtime.sendMessage({ name: 'ignore-order', msg: name });
+  if (evt.target.classList.contains('name')) {
+    setTimeout(() => window.close(), 0);
+  }
 });
 
 reloadEl.addEventListener('click', function(evt) {
